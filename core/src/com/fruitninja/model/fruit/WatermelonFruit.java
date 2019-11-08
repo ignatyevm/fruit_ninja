@@ -7,15 +7,15 @@ import com.badlogic.gdx.math.Rectangle;
 public class WatermelonFruit extends Fruit{
 
     public WatermelonFruit(float x, float y) {
-        this(x, y, Fruit.WATERMELON_TEXTURE, 100);
+        this(x, y, Fruit.WATERMELON_TEXTURE, 70, 2);
     }
 
-    private WatermelonFruit(float x, float y, Texture texture, float speed) {
-        super(x, y, texture, speed);
+    private WatermelonFruit(float x, float y, Texture texture, float speed, int max_health) {
+        super(x, y, texture, speed, max_health);
     }
 
-    private WatermelonFruit(Rectangle bounds, Sprite sprite, float speed) {
-        super(bounds, sprite, speed);
+    private WatermelonFruit(Rectangle bounds, Texture texture, float speed, int max_health) {
+        super(bounds, texture, speed, max_health);
     }
 
 }

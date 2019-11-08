@@ -7,15 +7,15 @@ import com.badlogic.gdx.math.Rectangle;
 public class BananaFruit extends Fruit{
 
     public BananaFruit(float x, float y) {
-        this(x, y, Fruit.BANANA_TEXTURE, 80);
+        this(x, y, Fruit.BANANA_TEXTURE, 100, 1);
     }
 
-    private BananaFruit(float x, float y, Texture texture, float speed) {
-        super(x, y, texture, speed);
+    private BananaFruit(float x, float y, Texture texture, float speed, int max_health) {
+        super(x, y, texture, speed, max_health);
     }
 
-    private BananaFruit(Rectangle bounds, Sprite sprite, float speed) {
-        super(bounds, sprite, speed);
+    private BananaFruit(Rectangle bounds, Texture texture, float speed, int max_health) {
+        super(bounds, texture, speed, max_health);
     }
 
 }
