@@ -4,10 +4,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.fruitninja.FruitNinjaMain;
 import com.fruitninja.model.fruit.BananaFruit;
 import com.fruitninja.model.fruit.Fruit;
 import com.fruitninja.model.fruit.WatermelonFruit;
 import com.fruitninja.view.GameScreen;
+import com.fruitninja.view.LoseMenuScreen;
 
 import java.util.Random;
 
@@ -37,7 +39,7 @@ public class GameController {
     public void handle() {
 
         if (health <= 0) {
-            //lose
+            FruitNinjaMain.game.setScreen(new LoseMenuScreen());
         }
 
         if (TimeUtils.millis() - lastSpawnTime > MathUtils.random(300, 1500)) spawnFruit();
