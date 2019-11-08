@@ -6,10 +6,15 @@ import com.fruitninja.view.GameScreen;
 
 public class FruitNinjaMain extends Game {
 
+	public static Game game = null;
+
 	private Screen gameScreen;
 
 	@Override
 	public void create() {
+		if (game == null) {
+			game = this;
+		}
 		gameScreen = new GameScreen();
 		this.setScreen(gameScreen);
 	}
