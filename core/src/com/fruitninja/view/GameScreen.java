@@ -5,13 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Circle;
-import com.badlogic.gdx.math.Polygon;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.fruitninja.controller.GameController;
 import com.fruitninja.model.fruit.Fruit;
 import com.fruitninja.utils.UI;
@@ -20,10 +14,11 @@ import java.util.ArrayList;
 
 public class GameScreen implements Screen {
 
-    SpriteBatch batch;
-    Texture background;
-    OrthographicCamera camera;
-    GameController gameController;
+    private SpriteBatch batch;
+    private Texture background;
+    private OrthographicCamera camera;
+    private GameController gameController;
+    private UI ui;
 
     public static ArrayList<Fruit> fruits;
 
@@ -40,14 +35,13 @@ public class GameScreen implements Screen {
         batch = new SpriteBatch();
         background = new Texture("background.jpg");
         gameController = new GameController();
+        ui = new UI();
     }
 
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        BitmapFont font = new BitmapFont();
 
         batch.setProjectionMatrix(camera.combined);
         camera.update();
@@ -60,6 +54,8 @@ public class GameScreen implements Screen {
         batch.end();
 
         gameController.handle();
+
+        ui.draw();
     }
 
     @Override
@@ -86,6 +82,7 @@ public class GameScreen implements Screen {
     public void dispose() {
         background.dispose();
         batch.dispose();
+        ui.dispose();
         Fruit.unloadTextures();
     }
 }
