@@ -10,7 +10,7 @@ import com.fruitninja.model.fruit.Fruit;
 import com.fruitninja.model.fruit.PineappleFruit;
 import com.fruitninja.model.fruit.WatermelonFruit;
 import com.fruitninja.view.GameScreen;
-import com.fruitninja.view.LoseMenuScreen;
+import com.fruitninja.view.MainMenuScreen;
 
 public class GameController {
 
@@ -40,7 +40,9 @@ public class GameController {
     public void handle() {
 
         if (health <= 0) {
-            FruitNinjaMain.game.setScreen(new LoseMenuScreen());
+            health = 5;
+            score = 0;
+            FruitNinjaMain.game.setScreen(new MainMenuScreen());
         }
 
         if (TimeUtils.millis() - lastSpawnTime > MathUtils.random(700, 2000)) spawnFruit();
