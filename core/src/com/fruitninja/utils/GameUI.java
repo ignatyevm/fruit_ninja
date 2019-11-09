@@ -9,14 +9,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.fruitninja.controller.GameController;
 
-public class UI {
+public class GameUI {
 
     private Stage stage;
     private Skin skin;
     private Texture heartTexture;
     private Label scoreLabel;
 
-    public UI() {
+    public GameUI() {
         stage = new Stage(new FitViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
         skin = new Skin(Gdx.files.internal("ui/skin.json"));
         heartTexture = new Texture(Gdx.files.internal("ui/heart.png"));

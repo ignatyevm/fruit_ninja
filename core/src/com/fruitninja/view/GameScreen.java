@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.fruitninja.controller.GameController;
 import com.fruitninja.model.fruit.Fruit;
-import com.fruitninja.utils.UI;
+import com.fruitninja.utils.GameUI;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class GameScreen implements Screen {
     private Texture background;
     private OrthographicCamera camera;
     private GameController gameController;
-    private UI ui;
+    private GameUI ui;
 
     public static ArrayList<Fruit> fruits;
 
@@ -35,7 +35,7 @@ public class GameScreen implements Screen {
         batch = new SpriteBatch();
         background = new Texture("background.jpg");
         gameController = new GameController();
-        ui = new UI();
+        ui = new GameUI();
     }
 
     @Override
